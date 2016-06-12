@@ -1,55 +1,38 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">User name</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    
-    </form>
-      <h1 class="title">Register</h1>
-      <form ng-submit="doRegister()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">First Name</span>
-          <input type="text" ng-model="registration.firstname">
-        </label>
-         <label class="item item-input">
-          <span class="input-label">Last Name</span>
-          <input type="text" ng-model="registration.lastname">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="email" ng-model="registration.email">
-        </label>
-         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="registration.username">
-        </label>
-       <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="registration.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Register</button>
-        </label>
-      </div>
-    </form>
-    
-  </ion-content>
-</ion-modal-view>
+<ion-view view-title="Francois branciard Coursera prototype">
+	<ion-header-bar>
+		<h1 class="title">Francois branciard Coursera prototype</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeLogin()">Close</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="card">
+			<div class="item item-text-wrap">
+				<h1>Welcome ! </h1>
+				<p>Find all daily specials all around you and also the no waste zone of shops. When you buy any products in the shop, it gives you the right to choose one product in the no waste zone which will be free for you !
+				</p>
+			</div>
+		</div>
+		<form ng-submit="doLogin()">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">Username</span>
+					<input type="text" ng-model="loginData.username">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="loginData.password">
+				</label>
+				<label class="item">
+					<button class="button button-block button-positive" type="submit">Log in</button>
+				</label>
+			</div>
+
+		</form>
+		<div class="list">
+			<label class="item">
+				<button class="button button-block button-balanced" ng-click="register()">Register here </button>
+			</label>
+		</div>
+	</ion-content>
+</ion-view>
