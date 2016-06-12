@@ -1,0 +1,47 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "transient": {
+    "name": "transient",
+    "connector": "transient"
+  },
+  "geo": {
+    "name": "geo",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
+  },
+  "cloudant": {
+    "url": "https://1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix:04ee2d37facaabe5f47d2cc2c998a29f648bf0681a1c322fdeda18ebbd12b634@1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix.cloudant.com",
+    "database": "fbranciardcourseradb",
+    "username": "1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix",
+    "password": "04ee2d37facaabe5f47d2cc2c998a29f648bf0681a1c322fdeda18ebbd12b634",
+    "name": "cloudant",
+    "connector": "cloudant",
+    "modelIndex": ""
+  }
+}

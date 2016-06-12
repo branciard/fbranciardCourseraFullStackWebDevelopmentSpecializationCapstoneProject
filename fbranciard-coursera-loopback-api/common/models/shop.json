@@ -1,0 +1,108 @@
+{
+  "name": "Shop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "clientsNumber": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "pepsShop": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    },
+    "tel": {
+      "type": "string",
+      "required": false
+    },
+    "mail": {
+      "type": "string",
+      "required": false
+    },
+    "city": {
+      "type": "string",
+      "required": false
+    },
+    "geopoint": {
+      "type": "geopoint",
+      "required": false
+    },
+    "country": {
+      "type": "string",
+      "required": false
+    },
+    "street": {
+      "type": "string",
+      "required": false
+    },
+    "zipcode": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "Profile",
+      "foreignKey": "profileId"
+    },
+    "dailyBoard": {
+      "type": "hasOne",
+      "model": "DailyBoard",
+      "foreignKey": "shopId"
+    },
+    "noWasteBoard": {
+      "type": "hasOne",
+      "model": "NoWasteBoard",
+      "foreignKey": "shopId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
