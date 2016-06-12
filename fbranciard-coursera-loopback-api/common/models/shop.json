@@ -12,7 +12,8 @@
     },
     "clientsNumber": {
       "type": "number",
-      "required": false
+      "required": false,
+      "default": 0
     },
     "name": {
       "type": "string",
@@ -20,9 +21,14 @@
     },
     "pepsShop": {
       "type": "number",
-      "required": false
+      "required": false,
+      "default": 0
     },
     "tel": {
+      "type": "string",
+      "required": false
+    },
+    "mail": {
       "type": "string",
       "required": false
     },
@@ -82,6 +88,19 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
       "permission": "ALLOW"
     }
   ],

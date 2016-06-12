@@ -30,8 +30,7 @@
       "property": "noWasteItemList",
       "options": {
         "validate": true,
-        "forceId": false,
-        "autoId": true
+        "forceId": false
       }
     }
   },
@@ -52,6 +51,19 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
       "permission": "ALLOW"
     }
   ],
